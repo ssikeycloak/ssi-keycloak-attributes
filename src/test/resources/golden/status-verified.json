@@ -1,0 +1,23 @@
+{
+  "status": "verified",
+  "step": "complete",
+  "attributes": {
+    "name": "John Doe",
+    "email": "john@example.com"
+  },
+  "evidence": [
+    {
+      "type": "document",
+      "method": "openid4vc/verification",
+      "time": "2026-02-26T00:00:00Z",
+      "document_details": {
+        "type": "VerifiableDiploma",
+        "issuer": {
+          "name": "did:web:issuer.example.com",
+          "country": "ID"
+        }
+      }
+    }
+  ],
+  "message": "Verification successful"
+}

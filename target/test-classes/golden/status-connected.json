@@ -1,0 +1,6 @@
+{
+  "status": "connected",
+  "step": "proof-request",
+  "connectionId": "conn-abc123",
+  "message": "Connection established, requesting proof"
+}

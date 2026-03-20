@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: kodrat.keycloak.api.DIDSovCharacterizationTest$IsConnectionEstablishedTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! -- in kodrat.keycloak.api.DIDSovCharacterizationTest$IsConnectionEstablishedTests
+kodrat.keycloak.api.DIDSovCharacterizationTest$IsConnectionEstablishedTests.returnsTrueWhenConnectionExists -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchFieldException: httpClient
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setField(DIDSovCharacterizationTest.java:277)
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setUp(DIDSovCharacterizationTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+kodrat.keycloak.api.DIDSovCharacterizationTest$IsConnectionEstablishedTests.returnsFalseWhenNoMsgId -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchFieldException: httpClient
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setField(DIDSovCharacterizationTest.java:277)
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setUp(DIDSovCharacterizationTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

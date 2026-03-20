@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "step": "failed",
+  "error": {
+    "code": "VERIFICATION_FAILED",
+    "reason": "issuer_did_mismatch"
+  },
+  "message": "Verification failed: issuer DID does not match"
+}

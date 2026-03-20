@@ -1,0 +1,780 @@
+/* ========================================
+   SSI Authentication - Modern Professional Theme
+   Glassmorphism Design with Gradient Accents
+   ======================================== */
+
+/* CSS Variables for easy theming */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --primary-gradient-hover: linear-gradient(135deg, #5a67d8 0%, #6b46a1 100%);
+    --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    --warning-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --error-gradient: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: rgba(255, 255, 255, 0.5);
+    --card-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    --card-shadow-hover: 0 12px 48px rgba(31, 38, 135, 0.2);
+    
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    
+    --accent-primary: #667eea;
+    --accent-success: #48bb78;
+    --accent-warning: #ed8936;
+    --accent-error: #f56565;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 2.5rem;
+    
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+body.kcHtmlClass,
+div#kc-content,
+div#kc-content-wrapper {
+    background: var(--bg-gradient) !important;
+    background-attachment: fixed !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove Keycloak default branding */
+#kc-header,
+#kc-header-wrapper,
+.kcLogoLink,
+.login-pf-logo,
+.brand {
+    display: none !important;
+}
+
+/* Override Keycloak containers */
+.login-pf,
+.login-pf body,
+.login-pf .container {
+    background: transparent !important;
+}
+
+/* Main Card Container - Glassmorphism Effect */
+.card-pf {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: var(--card-shadow) !important;
+    border-radius: var(--radius-xl) !important;
+    max-width: 520px !important;
+    margin: 2rem auto !important;
+    padding: var(--spacing-2xl) !important;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card-pf:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover) !important;
+}
+
+/* Hide Keycloak info section */
+#kc-info,
+#kc-info-wrapper {
+    display: none !important;
+}
+
+/* Reset content area */
+#kc-content,
+#kc-content-wrapper {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* ========================================
+   SSI Auth Container
+   ======================================== */
+
+.ssi-auth-container {
+    text-align: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: none !important;
+}
+
+.ssi-auth-container h1 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.025em;
+}
+
+.ssi-auth-container .subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xl);
+    font-weight: 400;
+}
+
+.ssi-auth-container p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   Header Title
+   ======================================== */
+
+.header-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========================================
+   Form Container
+   ======================================== */
+
+.form-container {
+    max-width: 520px;
+    margin: 2rem auto;
+    padding: var(--spacing-2xl);
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--card-shadow);
+    color: var(--text-primary);
+}
+
+/* ========================================
+   Section Block
+   ======================================== */
+
+.section-block {
+    background: rgba(102, 126, 234, 0.05);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.section-block:hover {
+    background: rgba(102, 126, 234, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.section-block h2,
+.section-block h3 {
+    color: var(--accent-primary);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+    font-weight: 700;
+}
+
+.section-block p {
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.9375rem;
+}
+
+/* ========================================
+   Wallet Grid & Options
+   ======================================== */
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.wallet-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--card-bg);
+    border: 2px solid rgba(102, 126, 234, 0.15);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.wallet-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-gradient);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.wallet-option:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+}
+
+.wallet-option:hover::before {
+    transform: scaleX(1);
+}
+
+.wallet-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 1.75rem;
+    transition: transform var(--transition-normal);
+}
+
+.wallet-option:hover .wallet-icon {
+    transform: scale(1.1);
+}
+
+.wallet-option button {
+    background-color: transparent;
+    border: none;
+    color: var(--accent-primary);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    transition: color var(--transition-fast);
+}
+
+.wallet-option:hover button {
+    color: #764ba2;
+}
+
+/* ========================================
+   Progress Indicator
+   ======================================== */
+
+.progress-indicator {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    opacity: 0.4;
+    transition: all var(--transition-normal);
+}
+
+.progress-step.active {
+    opacity: 1;
+}
+
+.progress-step.completed {
+    opacity: 1;
+}
+
+.progress-step-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: all var(--transition-normal);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-step.active .progress-step-circle {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+    transform: scale(1.1);
+}
+
+.progress-step.completed .progress-step-circle {
+    background: var(--success-gradient);
+    color: white;
+    box-shadow: 0 4px 16px rgba(17, 153, 142, 0.4);
+}
+
+.progress-step-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.progress-step.active .progress-step-label {
+    color: var(--accent-primary);
+}
+
+.progress-step.completed .progress-step-label {
+    color: var(--accent-success);
+}
+
+/* ========================================
+   QR Code Section
+   ======================================== */
+
+.qr-code-container {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: inline-block;
+}
+
+.qr-code-container img {
+    max-width: 260px;
+    height: auto;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.qr-error {
+    color: var(--accent-error);
+    font-weight: 600;
+}
+
+/* ========================================
+   Status Indicator
+   ======================================== */
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(102, 126, 234, 0.08);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(102, 126, 234, 0.15);
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    animation: pulse 2s infinite;
+    position: relative;
+}
+
+.status-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: var(--radius-full);
+    opacity: 0.3;
+    animation: pulse-ring 2s infinite;
+}
+
+.status-dot.active {
+    background: var(--success-gradient);
+}
+
+.status-dot.active::after {
+    background: var(--success-gradient);
+}
+
+.status-dot.pending {
+    background: var(--warning-gradient);
+}
+
+.status-dot.pending::after {
+    background: var(--warning-gradient);
+}
+
+.status-dot.error {
+    background: var(--error-gradient);
+}
+
+.status-dot.error::after {
+    background: var(--error-gradient);
+}
+
+.status-text {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+/* ========================================
+   Loading Spinner
+   ======================================== */
+
+.loading-spinner {
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.spinner-ring {
+    border: 4px solid rgba(102, 126, 234, 0.1);
+    border-top: 4px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+    position: relative;
+}
+
+.spinner-ring::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: rgba(118, 75, 162, 0.3);
+    animation: spin 1.5s linear infinite reverse;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.verification-status {
+    margin-top: var(--spacing-md);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.wallet-button {
+    background: var(--primary-gradient);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.wallet-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.wallet-button:hover {
+    background: var(--primary-gradient-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(102, 126, 234, 0.4);
+}
+
+.wallet-button:hover::before {
+    left: 100%;
+}
+
+.wallet-button:active {
+    transform: translateY(0);
+}
+
+.retry-button {
+    background: var(--error-gradient);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    margin-top: var(--spacing-lg);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    transition: all var(--transition-normal);
+    display: none;
+    box-shadow: 0 4px 16px rgba(235, 51, 73, 0.3);
+}
+
+.retry-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(235, 51, 73, 0.4);
+}
+
+/* ========================================
+   Polling Counter & Info
+   ======================================== */
+
+.polling-counter {
+    margin-top: var(--spacing-md);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    background: rgba(102, 126, 234, 0.05);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-full);
+    display: inline-block;
+}
+
+.info-text {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+/* ========================================
+   Messages
+   ======================================== */
+
+.error-message {
+    background: rgba(245, 101, 101, 0.1);
+    color: #c53030;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+    display: none;
+    border: 1px solid rgba(245, 101, 101, 0.2);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    backdrop-filter: blur(10px);
+}
+
+.warning-message {
+    background: rgba(237, 137, 54, 0.1);
+    color: #c05621;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md) 0;
+    display: none;
+    border: 1px solid rgba(237, 137, 54, 0.2);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    backdrop-filter: blur(10px);
+}
+
+/* ========================================
+   Hidden Elements
+   ======================================== */
+
+.hidden-form {
+    display: none;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 640px) {
+    :root {
+        --spacing-2xl: 1.5rem;
+        --spacing-xl: 1.25rem;
+        --spacing-lg: 1rem;
+    }
+    
+    .card-pf {
+        margin: 1rem !important;
+        padding: var(--spacing-lg) !important;
+    }
+    
+    .ssi-auth-container h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header-title {
+        font-size: 1.375rem;
+    }
+    
+    .form-container {
+        margin: 1rem auto;
+        padding: var(--spacing-lg);
+    }
+    
+    .wallet-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wallet-option {
+        padding: var(--spacing-md);
+    }
+    
+    .wallet-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+    }
+    
+    .qr-code-container {
+        padding: var(--spacing-md);
+    }
+    
+    .qr-code-container img {
+        max-width: 200px;
+    }
+    
+    .progress-indicator {
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+    
+    .progress-step-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8125rem;
+    }
+    
+    .progress-step-label {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .progress-step-label {
+        display: none;
+    }
+}
+
+/* ========================================
+   Animations & Utilities
+   ======================================== */
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(102, 126, 234, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+}

@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: kodrat.keycloak.api.DIDSovCharacterizationTest$VerifyPresentationTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! -- in kodrat.keycloak.api.DIDSovCharacterizationTest$VerifyPresentationTests
+kodrat.keycloak.api.DIDSovCharacterizationTest$VerifyPresentationTests.returnsTrueWhenVerified -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchFieldException: httpClient
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setField(DIDSovCharacterizationTest.java:277)
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setUp(DIDSovCharacterizationTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+kodrat.keycloak.api.DIDSovCharacterizationTest$VerifyPresentationTests.returnsFalseWhenNoPresExId -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NoSuchFieldException: httpClient
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setField(DIDSovCharacterizationTest.java:277)
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setUp(DIDSovCharacterizationTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+kodrat.keycloak.api.DIDSovCharacterizationTest$VerifyPresentationTests.returnsFalseOnIssuerMismatch -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NoSuchFieldException: httpClient
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setField(DIDSovCharacterizationTest.java:277)
+	at kodrat.keycloak.api.DIDSovCharacterizationTest.setUp(DIDSovCharacterizationTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
