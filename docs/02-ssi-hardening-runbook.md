@@ -583,8 +583,8 @@ jar tf $KEYCLOAK/providers/kodrat.keycloak-ssi-authenticator.jar | grep -E "(DID
 
 ## Contact Information
 
-**Development Team:** kodrat  
-**Repository:** github.com/kodrat/keycloak-ssi-authenticator  
+**Development Team:** kodrat, ssikeycloak
+**Repository:** https://github.com/ssikeycloak/ssi-keycloak-attributes/
 **Issue Tracker:** Use GitHub Issues
 
 ---
