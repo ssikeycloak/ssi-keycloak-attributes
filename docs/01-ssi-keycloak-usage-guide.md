@@ -6,6 +6,47 @@ Agent mapping used in this module:
 - `did:web` -> **walt.id** (OpenID4VC verifier)
 - `did:sov` -> **Aries Cloud Agent (ACA-Py)** (DIDComm present-proof)
 
+
+## Requirements
+
+### Build environment
+
+| Requirement | Version | Notes |
+|---|---|---|
+| JDK | 17 | Required, matches `maven.compiler.release` in `pom.xml` |
+| Maven | 3.8+ | To build the JAR |
+| Git | - | To clone the repo |
+
+### Runtime environment
+
+| Requirement | Version | Notes |
+|---|---|---|
+| Keycloak | 24.x | SPI BOM used: `keycloak-spi-bom 24.0.0` |
+| Docker | - | If Keycloak runs in a container |
+
+### SSI backend (depending on the chosen DID method)
+
+Pick one (or both):
+
+- **walt.id verifier** for `did:web`
+  - Verifier endpoint URL (HTTPS recommended)
+  - Bearer token (optional, depending on verifier configuration)
+  - Allowed issuer DID
+  - Definition of the credential to request (type + attributes)
+
+- **Aries Cloud Agent (ACA-Py)** for `did:sov`
+  - ACA-Py admin endpoint URL
+  - Bearer token / API key (optional)
+  - Allowed issuer DID (will be matched against the proof metadata)
+  - `schema_id` and the list of attributes to request
+
+### Keycloak access
+
+- Admin account for the target realm (to configure flow, client scope, mapper, and client)
+- Target realm already created
+- Target OIDC client already created
+
+
 ## 1) Module Summary
 
 - **Authenticator ID**: `ssi-authenticator`
